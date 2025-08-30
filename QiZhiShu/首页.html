@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常州市中晔科技培训有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-shadow {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+<!-- 导航栏 -->
+<header class="sticky top-0 bg-white shadow-md z-50 transition-all duration-300">
+    <div class="container  flex justify-content: flex-start; items-center">
+        <div class="flex items-center space-x-2" style="margin-left: 30px;">
+            <!--            <i class="fa fa-graduation-cap text-primary text-2xl"></i>-->
+            <img src="qizhishu.png" style="width:6%;">
+            <h2 class="text-xl font-bold text-primary  text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-emerald-500">
+                常州市中晔科技培训有限公司</h2>
+
+            <!--显示当前时间-->
+            <div id="currentDateTime"
+                 style="font-style:italic;font-family:cursive;font-size:17px;background-color: #f0f0f0;"></div>
+            <!--            // 获取当前日期和时间-->
+            <script>
+                function updateDateTime() {
+                const now = new Date();
+                const dateTimeString = now.toLocaleString(); // 格式化为本地日期和时间
+                document.getElementById("currentDateTime").textContent = dateTimeString;
+                }
+                // 初始加载时显示
+                updateDateTime();
+                // 每秒更新一次（可选）
+                setInterval(updateDateTime, 1000);
+            </script>
+        </div>
+
+
+        <!-- 桌面导航栏 -->
+        <nav class="flex flex-wrap space-x-4 pl-40" style="font-size:8px; width:70%; ">
+            <a href="#company" class="nav-link font-medium hover:text-primary transition-colors" style="margin-left: 40px;">关于我们</a>
+            <a href="#cpp-club" class="nav-link font-medium hover:text-primary transition-colors">C++社团</a>
+            <a href="#drone-club" class="nav-link font-medium hover:text-primary transition-colors">无人机社团</a>
+            <a href="#beidou-club"
+               class="nav-link font-medium hover:text-primary transition-colors" ;>北斗科创社团</a>
+            <a href="#mobileMenu" class="nav-link font-medium hover:text-primary transition-colors"
+               >👆回到顶部</a>
+        </nav>
+
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+            <a href="#home" class="py-2 hover:text-primary transition-colors">首页</a>
+            <a href="#cpp-club" class="py-2 hover:text-primary transition-colors">C++社团</a>
+            <a href="#drone-club" class="py-2 hover:text-primary transition-colors">无人机社团</a>
+            <a href="#beidou-club" class="py-2 hover:text-primary transition-colors">北斗科创社团</a>
+            <a href="#company" class="py-2 hover:text-primary transition-colors">公司介绍</a>
+        </div>
+    </div>
+</header>
+
+<!-- 英雄区域 -->
+<section id="home" class="bg-gradient-to-r from-blue-500 to-emerald-500 text-white py-16 md:py-14">
+
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4 animate-fade-in-up  "
+            style="font-family:fantasy;font-size:70px;">
+            新学期·社团招募开始啦！</h2>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90"
+           style="font-style:italic;C;font-size:22px;letter-spacing: 2px;letter-spacing: 2px;">
+            深耕科学教育，培育众多优秀学子斩获佳绩！期待您的加入！
+        </p>
+        <a href="#cpp-club"
+           class="inline-block bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg  ">
+            了解社团详情 <i class="fa fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+
+</section>
+
+<!-- 社团展示区 -->
+<section class="py-5 bg-white">
+    <div class="container mx-auto px-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">特色社团课程</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8  -mt-7">
+            <!-- C++社团 -->
+            <div id="cpp-club" class="bg-white rounded-xl overflow-hidden card-shadow hover-lift">
+                <div class="h-70 bg-blue-100 flex items-center justify-center" style="">
+                    <!--                    <i clas6s="fa fa-code text-primary text-6xl"></i>-->
+                    <img src="C++上课背景.jpg" style="width: 100%;height:100%;object-fit: cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">C++编程社团</h3>
+                    <p class="text-gray-600 mb-4">通过编程学习，培养学生在数学、逻辑、运算法则等方面的计算思维，并使用这种新方式思考学习生活中的每一件事情。</p>
+
+                    <!-- 课程详情（默认隐藏） -->
+                    <div class="club-details hidden mt-4 pt-4 border-t border-gray-100">
+                        <h4 class="font-semibold text-gray-700 mb-2">课程介绍：</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                            <li>GESP1-GESP4 级核心知识点</li>
+                            <li>C++基础语法与程序设计</li>
+                            <li>基础算法（穷举法、冒泡排序、线性查找等）</li>
+                            <li>竞赛真题解析(备GESP及江苏省信息未来夏令营。)</li>
+                        </ul>
+                        <!-- 报名文件下载 -->
+                        <a href="C++课程详情页.html" target="_blank"
+                           class="inline-flex items-center  text-white bg-primary px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                            <i class="fa fa-download mr-2"></i> 点我查看课程详情页
+                        </a>
+                    </div>
+
+                    <!-- 查看详情按钮 -->
+                    <button class="view-details mt-4 text-primary font-medium hover:text-blue-700 transition-colors">
+                        查看课程简介 <i class="fa fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 无人机社团 -->
+            <div id="drone-club" class="bg-white rounded-xl overflow-hidden card-shadow hover-lift">
+                <div class="h-70 bg-green-100 flex items-center justify-center">
+                    <!--                    <i class="fa fa-plane text-secondary text-6xl"></i>-->
+                    <img src="无人机.jpg" style="width: 100%;height:100%;object-fit: cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">无人机社团</h3>
+                    <p class="text-gray-600 mb-4">课程以校队组建和赛事备战为核心，涵盖航天知识、飞行实操和竞赛模拟。通过场景化训练，培养学生操控、规划和应急能力。</p>
+
+                    <!-- 课程详情（默认隐藏） -->
+                    <div class="club-details hidden mt-4 pt-4 border-t border-gray-100">
+                        <h4 class="font-semibold text-gray-700 mb-2">课程介绍：</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>新中国航天成就</li>
+                            <li>无人机发展史、原理、构造</li>
+                            <li>无人机实操</li>
+                            <li>无人机竞赛与赛事指导</li>
+                        </ul>
+                        <a href=" " target="_blank"
+                           class="inline-flex items-center  text-white bg-primary px-3 py-1 rounded-lg hover:bg-blue-600 transition-colors">
+                            <i class="fa fa-download mr-2"></i> 点我查看课程详情页
+                        </a>
+                    </div>
+
+                    <!-- 查看详情按钮 -->
+                    <button class="view-details mt-4 text-secondary font-medium hover:text-green-700 transition-colors">
+                        查看课程简介 <i class="fa fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 北斗科创社团 -->
+            <div id="beidou-club" class="bg-white rounded-xl overflow-hidden card-shadow hover-lift">
+                <div class="h-70 bg-yellow-100 flex items-center justify-center">
+                    <!--                    <i class="fa fa-compass text-accent text-6xl"></i>-->
+                    <img src="北斗科创背景.jpg" style="width: 100%;height:100%;object-fit: cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">北斗科创社团</h3>
+                    <p class="text-gray-600 mb-4">课程由多方专家打造，以“科创+实践”为核心。涵盖寻找类地星球、了解北斗导航、运载火箭等知识，感受科学就在身边。通过操作激发兴趣与能力，为航天学习奠定基础。</p>
+                    <!-- 课程详情（默认隐藏） -->
+                    <div class="club-details hidden mt-4 pt-4 border-t border-gray-100">
+                        <h4 class="font-semibold text-gray-700 mb-2">课程介绍：</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>通过视听、赏阅、实践，帮学生了解北斗导航</li>
+                            <li>运载火箭、科学家精神等</li>
+                            <li>全国青少年北斗杯大赛</li>
+                            <li>全国青少年航天创新大赛</li>
+                        </ul>
+                        <a href=" " target="_blank"
+                           class="inline-flex items-center  text-white bg-primary px-3 py-1 rounded-lg hover:bg-blue-600 transition-colors">
+                            <i class="fa fa-download mr-2"></i> 点我查看课程详情页
+                        </a>
+                    </div>
+
+                    <!-- 查看详情按钮 -->
+                    <button class="view-details mt-4 text-accent font-medium hover:text-yellow-700 transition-colors">
+                        查看课程简介 <i class="fa fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 公司介绍 -->
+<section id="company" class="py-8 bg-gray-50">
+    <div class="container mx-auto px-4 -mt-5">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-800">关于我们</h2>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto -mt-5">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-6 md:mb-0 pl-16">
+                    <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center " >
+<!--                        <i class="fa fa-building text-primary text-4xl"></i>-->
+                        <img src="qizhishu.png"style="width:400px;height:240px;object-fit:cover">
+                    </div>
+                </div>
+
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800    text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-emerald-500">
+                        常州市中晔科技培训有限公司</h3>
+
+                    <div class="space-y-4  text-gray-600 ">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-1 flex items-center">
+                                <i class="fa fa-map-marker text-primary mr-2">
+                                </i> 公司地址
+                            </h4>
+                            <p>常州市钟楼区健身路16号</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-1 flex items-center">
+                                <i class="fa fa-trophy text-primary mr-2"></i> 亮眼成绩
+                            </h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>“信息与未来”省赛中，学员表现突出，105人获奖，获奖率高达88.3%</li>
+                                <li>省常中“2+4”强基计划中，超50%录取学生有C++学习背景。</li>
+                                <li>姜祉旭、韩少峰等学员，凭借优异的编程成绩考入省常中“0+6”班。</li>
+                                <li>众多学员凭编程优势被知名初中录取，编程一直是常州升学“加分项”！</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-1 flex items-center">
+                                <i class="fa fa-info-circle text-primary mr-2"></i> 课程核心优势
+                            </h4>
+                            <p>
+                                从小学搭建“强基-竞赛-升学”全路径培养体系：对接国家强基人才选拔计划，低年级先帮孩子建立计算思维，初中无缝衔接CSP-J/S认证，高中冲刺信息学奥赛（NOI），让学习目标清晰不盲目。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 底部区域 -->
+<footer class="bg-dark text-white py-10">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-bold mb-4 flex items-center">
+                    <i class="fa fa-graduation-cap mr-2"></i> 科创教育
+                </h3>
+                <p class="text-gray-400">
+                    让每个孩子都能接触前沿科技，培养创新思维与实践能力。
+                </p>
+            </div>
+
+            <div class="pl-14">
+                <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#mobileMenu" class="hover:text-white transition-colors">👆回到顶部</a></li>
+                    <li><a href="#cpp-club" class="hover:text-white transition-colors">C++社团</a></li>
+                    <li><a href="#drone-club" class="hover:text-white transition-colors">无人机社团</a></li>
+                    <li><a href="#beidou-club" class="hover:text-white transition-colors">北斗科创社团</a></li>
+                    <li><a href="#company" class="hover:text-white transition-colors">公司介绍</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-4">联系我们</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center">
+                        <i class="fa fa-phone mr-2"></i>18114318533
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa fa-envelope mr-2"></i> contact@kecheng.com
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa fa-clock-o mr-2"></i> 周一至周五 9:00-18:00
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+            <p>&copy; 2025 常州市中晔科技培训有限公司 版权所有</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 移动端菜单切换
+    document.getElementById('menuBtn').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('py-2');
+            header.classList.remove('py-3');
+        } else {
+            header.classList.add('py-3');
+            header.classList.remove('py-2');
+        }
+    });
+
+    // 社团详情展开/收起
+    document.querySelectorAll('.view-details').forEach(button => {
+        button.addEventListener('click', function() {
+            const details = this.parentElement.querySelector('.club-details');
+            const icon = this.querySelector('i');
+
+            details.classList.toggle('hidden');
+
+            if (details.classList.contains('hidden')) {
+                this.innerHTML = '查看详情 <i class="fa fa-chevron-down ml-1"></i>';
+            } else {
+                this.innerHTML = '收起详情 <i class="fa fa-chevron-up ml-1"></i>';
+            }
+        });
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // 关闭移动菜单（如果打开）
+            document.getElementById('mobileMenu').classList.add('hidden');
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常州市中晔科技培训有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-shadow {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+<!-- 导航栏 -->
+<header class="sticky top-0 bg-white shadow-md z-50 transition-all duration-300">
+    <div class="container  flex justify-content: flex-start; items-center">
+        <div class="flex items-center space-x-2" style="margin-left: 30px;">
+            <!--            <i class="fa fa-graduation-cap text-primary text-2xl"></i>-->
+            <img src="qizhishu.png" style="width:6%;">
+            <h2 class="text-xl font-bold text-primary  text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-emerald-500">
+                常州市中晔科技培训有限公司</h2>
+            <!--显示当前时间-->
+            <div id="currentDateTime"
+                 style="font-style:italic;font-family:cursive;font-size:17px;background-color: #f0f0f0;"></div>
+            <!--            // 获取当前日期和时间-->
+            <script>
+                function updateDateTime() {
+                const now = new Date();
+                const dateTimeString = now.toLocaleString(); // 格式化为本地日期和时间
+                document.getElementById("currentDateTime").textContent = dateTimeString;
+                }
+                // 初始加载时显示
+                updateDateTime();
+                // 每秒更新一次（可选）
+                setInterval(updateDateTime, 1000);
+            </script>
+        </div>
+
+
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+            <a href="#home" class="py-2 hover:text-primary transition-colors">首页</a>
+            <a href="#cpp-club" class="py-2 hover:text-primary transition-colors">C++社团</a>
+            <a href="#drone-club" class="py-2 hover:text-primary transition-colors">无人机社团</a>
+            <a href="#beidou-club" class="py-2 hover:text-primary transition-colors">北斗科创社团</a>
+            <a href="#company" class="py-2 hover:text-primary transition-colors">公司介绍</a>
+        </div>
+    </div>
+</header>
+
+<!-- 英雄区域 -->
+<section id="home" class="bg-gradient-to-r from-blue-500 to-emerald-500 text-white py-16 md:py-1  pl-3">
+
+    <!--    轮播器部分 -->
+    <div class="mt-16 max-w-5.5xl mx-auto overflow-hidden" style="width:1500px;">
+        <h3 class="text-xl   md:text-2xl  mb-6 text-center" style="font-family:华文行楷;font-size:40px;">
+            💥荣耀绽放！启智树学员再创佳绩！</h3>
+
+        <!-- 横排轮播容器 -->
+        <div class="relative" style="width:1200px">
+            <!-- 轮播轨道 - 横排展示所有图片 -->
+            <div class="carousel-track flex transition-transform duration-300 ease"
+                 style="height: auto; md:height: auto;">
+                <div class="carousel-slide min-w-[30%] md:min-w-[25%] p-2">
+                    <img src="喜报1.png" alt="全国青少年科技创新大赛金奖"
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+
+                <div class="carousel-slide min-w-[27%] md:min-w-[25%] p-2">
+                    <img src="喜报2.jpg" alt="全国中小学无人机大赛团体冠军"
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="carousel-slide min-w-[30%] md:min-w-[25%] p-2">
+                    <img src="zhongye.jpg" alt="北斗科技创新大赛一等奖"
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="carousel-slide min-w-[30%] md:min-w-[25%] p-2">
+                    <img src="zhaohaikun.png" alt="优秀科技教育机构"
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div class="carousel-slide min-w-[30%] md:min-w-[25%] p-2">
+                    <img src="喜报3.jpg" alt="国际青少年编程挑战赛优异成绩"
+                         class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+
+
+            </div>
+
+            <!--             轮播控制按钮 -->
+            <!--            <button class="carousel-control prev absolute top-1/2 left-2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-100 transition-all shadow-md z-10">-->
+            <!--                <i class="fa fa-chevron-left text-primary"></i>-->
+            <!--            </button>-->
+            <!--            <button class="carousel-control next absolute top-1/2 right-2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-100 transition-all shadow-md z-10">-->
+            <!--                <i class="fa fa-chevron-right text-primary"></i>-->
+            <!--            </button>-->
+        </div>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                /* 保留原有工具类 */
+                .content-auto {
+                    content-visibility: auto;
+                }
+                .card-shadow {
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                }
+                .hover-lift {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                .hover-lift:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                }
+
+                /* 修改轮播相关样式 */
+                .carousel-track {
+                    scroll-snap-type: x mandatory;
+                }
+                .carousel-slide {
+                    scroll-snap-align: start;
+                }
+            }
+        </style>
+        <!-- 修改的轮播JavaScript代码 -->
+        <script>
+            <!--            // 保留原有JavaScript代码...-->
+
+            <!--            // 修改轮播功能代码-->
+            <!--            document.addEventListener('DOMContentLoaded', function() {-->
+            <!--                const track = document.querySelector('.carousel-track');-->
+            <!--                const slides = document.querySelectorAll('.carousel-slide');-->
+            <!--                const prevButton = document.querySelector('.carousel-control.prev');-->
+            <!--                const nextButton = document.querySelector('.carousel-control.next');-->
+            <!--                let currentPosition = 0;-->
+            <!--                const slideWidth = slides[0].offsetWidth;-->
+            <!--                const slidesToShow = window.innerWidth >= 768 ? 3 : 2; // 桌面显示3张，移动端显示2张-->
+            <!--                const maxPosition = slides.length - slidesToShow;-->
+
+            <!--                // 移动轮播-->
+            <!--                function moveCarousel() {-->
+            <!--                    track.style.transform = `translateX(-${currentPosition * slideWidth}px)`;-->
+            <!--                }-->
+
+            <!--                // 下一张-->
+            <!--                nextButton.addEventListener('click', () => {-->
+            <!--                    currentPosition = Math.min(currentPosition , maxPosition);-->
+            <!--                    moveCarousel();-->
+            <!--                });-->
+
+            <!--                // 上一张-->
+            <!--                prevButton.addEventListener('click', () => {-->
+            <!--                    currentPosition = Math.max(currentPosition , 0);-->
+            <!--                    moveCarousel();-->
+            <!--                });-->
+
+            <!--                // 自动轮播-->
+            <!--                function autoSlide() {-->
+            <!--                    currentPosition = (currentPosition + 1) > maxPosition ? 0 : currentPosition + 1;-->
+            <!--                    moveCarousel();-->
+            <!--                }-->
+
+            <!--                // 每4秒自动轮播一次-->
+            <!--                let slideInterval = setInterval(autoSlide, 2000);-->
+
+            <!--                // 鼠标悬停时暂停自动轮播-->
+            <!--                const carouselContainer = document.querySelector('.carousel-track').parentElement;-->
+            <!--                carouselContainer.addEventListener('mouseenter', () => {-->
+            <!--                    clearInterval(slideInterval);-->
+            <!--                });-->
+
+            <!--                // 鼠标离开时恢复自动轮播-->
+            <!--                carouselContainer.addEventListener('mouseleave', () => {-->
+            <!--                    slideInterval = setInterval(autoSlide, 3000);-->
+            <!--                });-->
+
+            <!--                // 窗口大小改变时重新计算-->
+            <!--                window.addEventListener('resize', () => {-->
+            <!--                    const newSlidesToShow = window.innerWidth >= 768 ? 3 : 2;-->
+            <!--                    const newMaxPosition = slides.length - newSlidesToShow;-->
+            <!--                    currentPosition = Math.min(currentPosition, newMaxPosition);-->
+            <!--                    moveCarousel();-->
+            <!--                });-->
+            <!--            });-->
+        </script>
+    </div>
+
+    <!--    课程介绍部分-->
+    <div class="container mx-auto px-4">
+        <div class="bg-white rounded-xl overflow-hidden card-shadow ">
+
+            <!-- C++社团（新增内容全部在这里） -->
+            <div id="cpp-club" class="bg-white rounded-xl overflow-hidden card-shadow ">
+
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">北斗科创社团</h3>
+                    <p class="text-gray-600 mb-4">
+                        💻 国内唯一由中国科学技术馆组织创作的青少年融媒体科普课程。</p>
+                    <p class="text-gray-600 mb-4">
+                        💻 课程从视听、赏阅、实践多个层面开拓学生视野。覆盖技术工程、自然科学、航空航天等领域知识，让学生切实感受
+                        “科学就在身边”。</p>
+                    <p class="text-gray-600 mb-4">
+                        💻 通过动手操作、实验探究，激发学生内在学习热情，提升动手实践能力与科学素养，</p>
+
+                    <!-- 课程详情（默认隐藏） -->
+                    <div class="club-details  mt-4 pt-4 border-t border-gray-100">
+                        <!-- 1️⃣ 课程简介 -->
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-700 mb-2">👉课程简介：</h4>
+                            <p class="text-gray-800 text-sm leading-relaxed">
+                                1、以“科创+实践”为核心，通过视听、赏阅、实践，帮学生了解北斗导航原理、运载火箭等知识，感受科学就在身边。
+                            </p>
+                            <div class="my-3"></div>
+                            <p class="text-gray-800 text-sm leading-relaxed">
+                                2、结合动手操作（如组装北斗终端、设计定位方案），激发科学兴趣，提升实践能力与素养。
+                            </p>
+                            <div class="my-3"></div>
+                            <p class="text-gray-800 text-sm leading-relaxed">
+                                3、助力学生参与全国科创大赛、北斗杯等赛事，为航天科技学习打基础，引导树立当科学家的志向，
+                            </p>
+
+
+                            <div class="mt-16 max-w-5.5xl mx-auto overflow-hidden" style="width:1500px;">
+
+                                <!-- 横排轮播容器 -->
+                                <div class="relative" style="width:1200px">
+                                    <!-- 轮播轨道 - 横排展示所有图片 -->
+                                    <div class="carousel-track flex transition-transform duration-300 ease"
+                                         style="height: auto; md:height: auto;">
+                                        <div class="carousel-slide min-w-[30%] md:min-w-[25%] p-2">
+                                            <img src="北斗科创.jpg" alt="全国青少年科技创新大赛金奖"
+                                                 class="w-full h-full object-cover rounded-lg shadow-md">
+                                        </div>
+
+                                        <div class="carousel-slide min-w-[27%] md:min-w-[25%] p-2">
+                                            <img src="喜报2.jpg" alt="全国中小学无人机大赛团体冠军"
+                                                 class="w-full h-full object-cover rounded-lg shadow-md">
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <!--             轮播控制按钮 -->
+                                    <!--            <button class="carousel-control prev absolute top-1/2 left-2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-100 transition-all shadow-md z-10">-->
+                                    <!--                <i class="fa fa-chevron-left text-primary"></i>-->
+                                    <!--            </button>-->
+                                    <!--            <button class="carousel-control next absolute top-1/2 right-2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-100 transition-all shadow-md z-10">-->
+                                    <!--                <i class="fa fa-chevron-right text-primary"></i>-->
+                                    <!--            </button>-->
+                                </div>
+                                <style type="text/tailwindcss">
+                                    @layer utilities {
+                                        /* 保留原有工具类 */
+                                        .content-auto {
+                                            content-visibility: auto;
+                                        }
+                                        .card-shadow {
+                                            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                                        }
+                                        .hover-lift {
+                                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                        }
+                                        .hover-lift:hover {
+                                            transform: translateY(-5px);
+                                            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                                        }
+
+                                        /* 修改轮播相关样式 */
+                                        .carousel-track {
+                                            scroll-snap-type: x mandatory;
+                                        }
+                                        .carousel-slide {
+                                            scroll-snap-align: start;
+                                        }
+                                    }
+                                </style>
+                                <!-- 修改的轮播JavaScript代码 -->
+                                <script>
+                                    <!--            // 保留原有JavaScript代码...-->
+
+                                    <!--            // 修改轮播功能代码-->
+                                    <!--            document.addEventListener('DOMContentLoaded', function() {-->
+                                    <!--                const track = document.querySelector('.carousel-track');-->
+                                    <!--                const slides = document.querySelectorAll('.carousel-slide');-->
+                                    <!--                const prevButton = document.querySelector('.carousel-control.prev');-->
+                                    <!--                const nextButton = document.querySelector('.carousel-control.next');-->
+                                    <!--                let currentPosition = 0;-->
+                                    <!--                const slideWidth = slides[0].offsetWidth;-->
+                                    <!--                const slidesToShow = window.innerWidth >= 768 ? 3 : 2; // 桌面显示3张，移动端显示2张-->
+                                    <!--                const maxPosition = slides.length - slidesToShow;-->
+
+                                    <!--                // 移动轮播-->
+                                    <!--                function moveCarousel() {-->
+                                    <!--                    track.style.transform = `translateX(-${currentPosition * slideWidth}px)`;-->
+                                    <!--                }-->
+
+                                    <!--                // 下一张-->
+                                    <!--                nextButton.addEventListener('click', () => {-->
+                                    <!--                    currentPosition = Math.min(currentPosition , maxPosition);-->
+                                    <!--                    moveCarousel();-->
+                                    <!--                });-->
+
+                                    <!--                // 上一张-->
+                                    <!--                prevButton.addEventListener('click', () => {-->
+                                    <!--                    currentPosition = Math.max(currentPosition , 0);-->
+                                    <!--                    moveCarousel();-->
+                                    <!--                });-->
+
+                                    <!--                // 自动轮播-->
+                                    <!--                function autoSlide() {-->
+                                    <!--                    currentPosition = (currentPosition + 1) > maxPosition ? 0 : currentPosition + 1;-->
+                                    <!--                    moveCarousel();-->
+                                    <!--                }-->
+
+                                    <!--                // 每4秒自动轮播一次-->
+                                    <!--                let slideInterval = setInterval(autoSlide, 2000);-->
+
+                                    <!--                // 鼠标悬停时暂停自动轮播-->
+                                    <!--                const carouselContainer = document.querySelector('.carousel-track').parentElement;-->
+                                    <!--                carouselContainer.addEventListener('mouseenter', () => {-->
+                                    <!--                    clearInterval(slideInterval);-->
+                                    <!--                });-->
+
+                                    <!--                // 鼠标离开时恢复自动轮播-->
+                                    <!--                carouselContainer.addEventListener('mouseleave', () => {-->
+                                    <!--                    slideInterval = setInterval(autoSlide, 3000);-->
+                                    <!--                });-->
+
+                                    <!--                // 窗口大小改变时重新计算-->
+                                    <!--                window.addEventListener('resize', () => {-->
+                                    <!--                    const newSlidesToShow = window.innerWidth >= 768 ? 3 : 2;-->
+                                    <!--                    const newMaxPosition = slides.length - newSlidesToShow;-->
+                                    <!--                    currentPosition = Math.min(currentPosition, newMaxPosition);-->
+                                    <!--                    moveCarousel();-->
+                                    <!--                });-->
+                                    <!--            });-->
+                                </script>
+                            </div>
+
+
+                            <!-- 2️⃣ 公司荣誉 -->
+                            <div class="mb-6 py-5">
+                                <h4 class="font-semibold text-gray-700 mb-2">公司荣誉：</h4>
+                                <ul class="text-sm text-gray-800 space-y-1 list-disc list-inside">
+                                    <li>💥“2025年信息与未来”省赛中，启智树学员表现突出，105人成功获奖，获奖率高达88.3% ；
+                                    </li>
+                                    <li>
+                                        💥2025年考上清北的夏弘毅、邹秦天、陈杨、赵海鲲等同学，小学时就通过我们的课程奠定了编程基础，为高中竞赛获奖埋下伏笔；
+                                    </li>
+                                    <li>💥省常中“2+4”强基计划中，超50%录取学生有C++学习背景；</li>
+                                    <li>
+                                        💥姜祉旭、韩少峰等学员，凭借优异的编程成绩顺利考入省常中“0+6”班。众多学员凭编程优势被知名初中录取，编程一直是常州的“加分项”！
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                            <!-- 3️⃣ 家长扫码报名 -->
+                            <div class="mb-6 " style="background-color: #f9f9f9; padding: 10px; border-radius: 10px;">
+                                <h4 class="font-semibold text-gray-700 mb-2">扫码报名</h4>
+                                <img src="qr-cpp.png" alt="C++社团报名二维码" class="w-32 h-32   border">
+                                <p class="text-sm text-gray-500">微信扫码 → 填写信息 → 等待老师联系</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</section>
+
+
+<script>
+    // 移动端菜单切换
+    document.getElementById('menuBtn').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('py-2');
+            header.classList.remove('py-3');
+        } else {
+            header.classList.add('py-3');
+            header.classList.remove('py-2');
+        }
+    });
+
+    // 社团详情展开/收起
+    document.querySelectorAll('.view-details').forEach(button => {
+        button.addEventListener('click', function() {
+            const details = this.parentElement.querySelector('.club-details');
+            const icon = this.querySelector('i');
+
+            details.classList.toggle('hidden');
+
+            if (details.classList.contains('hidden')) {
+                this.innerHTML = '查看详情 <i class="fa fa-chevron-down ml-1"></i>';
+            } else {
+                this.innerHTML = '收起详情 <i class="fa fa-chevron-up ml-1"></i>';
+            }
+        });
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // 关闭移动菜单（如果打开）
+            document.getElementById('mobileMenu').classList.add('hidden');
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
